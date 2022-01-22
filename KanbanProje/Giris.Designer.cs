@@ -76,17 +76,18 @@
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(101, 39);
             this.btnGiris.TabIndex = 2;
-            this.btnGiris.Text = "Giriş";
+            this.btnGiris.Text = "Go";
             this.btnGiris.UseVisualStyleBackColor = true;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // btnYeniProje
             // 
+            this.btnYeniProje.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
             this.btnYeniProje.Location = new System.Drawing.Point(148, 193);
             this.btnYeniProje.Name = "btnYeniProje";
             this.btnYeniProje.Size = new System.Drawing.Size(101, 38);
             this.btnYeniProje.TabIndex = 3;
-            this.btnYeniProje.Text = "Yeni Proje Oluştur";
+            this.btnYeniProje.Text = "New Project";
             this.btnYeniProje.UseVisualStyleBackColor = true;
             this.btnYeniProje.Click += new System.EventHandler(this.btnYeniProje_Click);
             // 
@@ -105,6 +106,7 @@
             this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Giris_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

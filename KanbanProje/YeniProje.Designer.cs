@@ -67,11 +67,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
-            this.label2.Location = new System.Drawing.Point(87, 133);
+            this.label2.Location = new System.Drawing.Point(58, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 14);
+            this.label2.Size = new System.Drawing.Size(118, 14);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Proje Adı =";
+            this.label2.Text = "Project Name =";
             // 
             // label3
             // 
@@ -79,9 +79,9 @@
             this.label3.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
             this.label3.Location = new System.Drawing.Point(72, 173);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 14);
+            this.label3.Size = new System.Drawing.Size(95, 14);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Kullanıcı Adı =";
+            this.label3.Text = "User Name =";
             // 
             // txtProjeAdi
             // 
@@ -104,8 +104,9 @@
             this.btnOlustur.Name = "btnOlustur";
             this.btnOlustur.Size = new System.Drawing.Size(129, 41);
             this.btnOlustur.TabIndex = 4;
-            this.btnOlustur.Text = "Yeni Proje Oluştur";
+            this.btnOlustur.Text = "Create Project";
             this.btnOlustur.UseVisualStyleBackColor = true;
+            this.btnOlustur.Click += new System.EventHandler(this.btnOlustur_Click);
             // 
             // YeniProje
             // 

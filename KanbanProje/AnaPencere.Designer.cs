@@ -34,8 +34,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlDropDown = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.btnKanBan = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -76,40 +76,42 @@
             // 
             // pnlDropDown
             // 
-            this.pnlDropDown.Controls.Add(this.button4);
-            this.pnlDropDown.Controls.Add(this.button3);
+            this.pnlDropDown.Controls.Add(this.btnClose);
+            this.pnlDropDown.Controls.Add(this.btnAbout);
             this.pnlDropDown.Controls.Add(this.btnKanBan);
             this.pnlDropDown.Controls.Add(this.button1);
             this.pnlDropDown.Location = new System.Drawing.Point(12, 49);
             this.pnlDropDown.MaximumSize = new System.Drawing.Size(193, 169);
             this.pnlDropDown.MinimumSize = new System.Drawing.Size(193, 43);
             this.pnlDropDown.Name = "pnlDropDown";
-            this.pnlDropDown.Size = new System.Drawing.Size(193, 43);
+            this.pnlDropDown.Size = new System.Drawing.Size(193, 44);
             this.pnlDropDown.TabIndex = 4;
             // 
-            // button4
+            // btnClose
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(0, 128);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(193, 41);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(0, 128);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(193, 41);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Exit Program";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button3
+            // btnAbout
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(0, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 43);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAbout.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Location = new System.Drawing.Point(0, 85);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(193, 43);
+            this.btnAbout.TabIndex = 6;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnKanBan
             // 
@@ -136,7 +138,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 43);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Başla";
+            this.button1.Text = "Go";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button1.UseVisualStyleBackColor = false;
@@ -169,8 +171,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel pnlDropDown;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnKanBan;
         private System.Windows.Forms.Button button1;
     }

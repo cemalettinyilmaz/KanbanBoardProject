@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kanboard.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,14 @@ namespace KanbanProje
         public Giris()
         {
             InitializeComponent();
+            projeListe = projeYonetici.Projeler;
         }
+        ProjeYoneticisi projeYonetici=new ProjeYoneticisi();
+        List<Proje> projeListe;
+        Proje proje;
 
-       
-
+        #region Kontroller
+        
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
@@ -45,17 +50,42 @@ namespace KanbanProje
             Application.Exit();
         }
 
+        #endregion
+
         private void btnYeniProje_Click(object sender, EventArgs e)
         {
-            YeniProje yeniProje = new YeniProje();
+            YeniProje yeniProje = new YeniProje(projeYonetici);
             yeniProje.ShowDialog();
+            comboboxDuzenle();
         }
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            AnaPencere anaPencere = new AnaPencere();
-            anaPencere.Show();
-            this.Hide();
+            if (string.IsNullOrEmpty(cmbProjeler.Text))
+                MessageBox.Show("Select a project.");
+            else
+            {
+                proje = projeYonetici.projeAc(cmbProjeler.Text);
+                AnaPencere anaPencere = new AnaPencere();
+                anaPencere.Show();
+                this.Hide();
+            }
+        }
+        
+        private void Giris_Load(object sender, EventArgs e)
+        {
+           
+           
+            
+        }
+
+        public void comboboxDuzenle()
+        {
+            foreach (var item in projeListe)
+            {
+                cmbProjeler.Items.Add(item.ProjeAdi);
+            }
+
         }
     }
 }

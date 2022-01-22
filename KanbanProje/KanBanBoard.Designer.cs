@@ -28,41 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvTodo = new System.Windows.Forms.DataGridView();
-            this.dgvDoing = new System.Windows.Forms.DataGridView();
-            this.dgvDone = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTodo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDoing)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDone)).BeginInit();
+            this.lbTodo = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // dgvTodo
-            // 
-            this.dgvTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTodo.Location = new System.Drawing.Point(231, 81);
-            this.dgvTodo.Name = "dgvTodo";
-            this.dgvTodo.Size = new System.Drawing.Size(240, 441);
-            this.dgvTodo.TabIndex = 0;
-            // 
-            // dgvDoing
-            // 
-            this.dgvDoing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDoing.Location = new System.Drawing.Point(552, 81);
-            this.dgvDoing.Name = "dgvDoing";
-            this.dgvDoing.Size = new System.Drawing.Size(240, 441);
-            this.dgvDoing.TabIndex = 0;
-            // 
-            // dgvDone
-            // 
-            this.dgvDone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDone.Location = new System.Drawing.Point(859, 81);
-            this.dgvDone.Name = "dgvDone";
-            this.dgvDone.Size = new System.Drawing.Size(240, 441);
-            this.dgvDone.TabIndex = 0;
             // 
             // label1
             // 
@@ -106,38 +79,64 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lbTodo
+            // 
+            this.lbTodo.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.lbTodo.FormattingEnabled = true;
+            this.lbTodo.Location = new System.Drawing.Point(231, 81);
+            this.lbTodo.Name = "lbTodo";
+            this.lbTodo.Size = new System.Drawing.Size(240, 446);
+            this.lbTodo.TabIndex = 3;
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.OliveDrab;
+            this.listBox1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(558, 81);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(240, 446);
+            this.listBox1.TabIndex = 3;
+            // 
+            // listBox2
+            // 
+            this.listBox2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.listBox2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(865, 81);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(240, 446);
+            this.listBox2.TabIndex = 3;
+            // 
             // KanBanBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1195, 554);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbTodo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvDone);
-            this.Controls.Add(this.dgvDoing);
-            this.Controls.Add(this.dgvTodo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KanBanBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KanBanBoard";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTodo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDoing)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDone)).EndInit();
+            this.Load += new System.EventHandler(this.KanBanBoard_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvTodo;
-        private System.Windows.Forms.DataGridView dgvDoing;
-        private System.Windows.Forms.DataGridView dgvDone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lbTodo;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }

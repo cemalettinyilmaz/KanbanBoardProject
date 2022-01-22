@@ -86,7 +86,18 @@ namespace KanbanProje
         {
             Application.Exit();
         }
+
         #endregion
 
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(" This program was designed by Cemalettin Yılmaz. BilgeAdamBoost is a project given in the software developer training program. ");
+            timer1.Start();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

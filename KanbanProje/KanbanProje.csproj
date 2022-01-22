@@ -113,5 +113,11 @@
   <ItemGroup>
     <None Include="Resources\arrow2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kanboard.Data\Kanboard.Data.csproj">
+      <Project>{b35f58a9-15c7-4daa-9154-d795565aa5ba}</Project>
+      <Name>Kanboard.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
