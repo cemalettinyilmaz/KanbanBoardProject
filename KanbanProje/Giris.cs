@@ -50,5 +50,12 @@ namespace KanbanProje
             YeniProje yeniProje = new YeniProje();
             yeniProje.ShowDialog();
         }
+
+        private void btnGiris_Click(object sender, EventArgs e)
+        {
+            AnaPencere anaPencere = new AnaPencere();
+            anaPencere.Show();
+            this.Hide();
+        }
     }
 }

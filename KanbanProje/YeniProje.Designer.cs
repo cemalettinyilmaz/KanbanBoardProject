@@ -99,9 +99,10 @@
             // 
             // btnOlustur
             // 
+            this.btnOlustur.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
             this.btnOlustur.Location = new System.Drawing.Point(136, 216);
             this.btnOlustur.Name = "btnOlustur";
-            this.btnOlustur.Size = new System.Drawing.Size(129, 31);
+            this.btnOlustur.Size = new System.Drawing.Size(129, 41);
             this.btnOlustur.TabIndex = 4;
             this.btnOlustur.Text = "Yeni Proje Oluştur";
             this.btnOlustur.UseVisualStyleBackColor = true;
