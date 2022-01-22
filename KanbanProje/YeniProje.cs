@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class Form1 : Form
+    public partial class YeniProje : Form
     {
-        bool mouseDown; 
-        public Form1()
+        bool mouseDown;
+        public YeniProje()
         {
             InitializeComponent();
         }
-
-       
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
@@ -27,7 +24,7 @@ namespace KanbanProje
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if(mouseDown)
+            if (mouseDown)
             {
                 int mouseX = MousePosition.X - 200;
                 int mouseY = MousePosition.Y - 10;
@@ -42,7 +39,7 @@ namespace KanbanProje
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
         }
     }
 }

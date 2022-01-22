@@ -1,6 +1,6 @@
 ﻿namespace KanbanProje
 {
-    partial class Form1
+    partial class Giris
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbProjeler = new System.Windows.Forms.ComboBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGiris = new System.Windows.Forms.Button();
+            this.btnYeniProje = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,38 +69,39 @@
             this.cmbProjeler.Size = new System.Drawing.Size(157, 22);
             this.cmbProjeler.TabIndex = 1;
             // 
-            // btnLogin
+            // btnGiris
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Txt_IV25", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLogin.Location = new System.Drawing.Point(148, 148);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(101, 39);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Giriş";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnGiris.Font = new System.Drawing.Font("Txt_IV25", 12F, System.Drawing.FontStyle.Bold);
+            this.btnGiris.Location = new System.Drawing.Point(148, 148);
+            this.btnGiris.Name = "btnGiris";
+            this.btnGiris.Size = new System.Drawing.Size(101, 39);
+            this.btnGiris.TabIndex = 2;
+            this.btnGiris.Text = "Giriş";
+            this.btnGiris.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnYeniProje
             // 
-            this.button1.Location = new System.Drawing.Point(148, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Yeni Proje Oluştur";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnYeniProje.Location = new System.Drawing.Point(148, 193);
+            this.btnYeniProje.Name = "btnYeniProje";
+            this.btnYeniProje.Size = new System.Drawing.Size(101, 38);
+            this.btnYeniProje.TabIndex = 3;
+            this.btnYeniProje.Text = "Yeni Proje Oluştur";
+            this.btnYeniProje.UseVisualStyleBackColor = true;
+            this.btnYeniProje.Click += new System.EventHandler(this.btnYeniProje_Click);
             // 
-            // Form1
+            // Giris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(400, 320);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnYeniProje);
+            this.Controls.Add(this.btnGiris);
             this.Controls.Add(this.cmbProjeler);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -113,8 +114,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbProjeler;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGiris;
+        private System.Windows.Forms.Button btnYeniProje;
     }
 }
 
