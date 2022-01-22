@@ -18,7 +18,16 @@ namespace KanbanProje
         public AnaPencere()
         {
             InitializeComponent();
+            kanban.MdiParent = this;
         }
+        KanBanBoard kanban = new KanBanBoard();
+        private void btnKanBan_Click(object sender, EventArgs e)
+        {
+            kanban.Show();
+            timer1.Start();
+        }
+
+        #region Kontroller
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -77,5 +86,7 @@ namespace KanbanProje
         {
             Application.Exit();
         }
+        #endregion
+
     }
 }
