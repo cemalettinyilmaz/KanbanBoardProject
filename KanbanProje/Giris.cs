@@ -66,7 +66,7 @@ namespace KanbanProje
             else
             {
                 proje = projeYonetici.projeAc(cmbProjeler.Text);
-                AnaPencere anaPencere = new AnaPencere();
+                AnaPencere anaPencere = new AnaPencere(proje,this);
                 anaPencere.Show();
                 this.Hide();
             }

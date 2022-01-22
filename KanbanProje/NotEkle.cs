@@ -11,16 +11,14 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class YeniProje : Form
+    public partial class NotEkle : Form
     {
         bool mouseDown;
-        ProjeYoneticisi yonetici;
-    
-        public YeniProje(ProjeYoneticisi gelenYonetici)
+        Proje proje;
+        public NotEkle(Proje gelenProje)
         {
             InitializeComponent();
-            yonetici = gelenYonetici;
-            
+            proje = gelenProje;
         }
 
         #region Kontroller
@@ -47,36 +45,36 @@ namespace KanbanProje
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
-           
-            
         }
-
         #endregion
 
-        private void btnOlustur_Click(object sender, EventArgs e)
+        private void txtNot_TextChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtKullaniciAdi.Text) && !string.IsNullOrEmpty(txtProjeAdi.Text))
-            {
+            int u = 140-txtNot.TextLength;
+            lblKalan.Text = u.ToString();
 
-            bool projeOlustuMu = (yonetici.yeniProjeOlustur(txtProjeAdi.Text, txtKullaniciAdi.Text));
-
-            if (projeOlustuMu)
-                {
-                MessageBox.Show("Project Created");
-                    this.Hide();
-                   
-
-                }
-            else
-                MessageBox.Show("This project name has been used before. Please enter a new project name.");
-            }
-            else
-                MessageBox.Show("Fill in all fields.");
         }
 
-        private void YeniProje_Load(object sender, EventArgs e)
+        private void NotEkle_Load(object sender, EventArgs e)
         {
-            
+            txtNot.MaxLength = 140;
+            lblKalan.Text = 140.ToString();
+        }
+
+        private void btnNotEkle_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtNotAdi.Text) || string.IsNullOrEmpty(txtNot.Text) || string.IsNullOrEmpty(txtKategori.Text))
+            {
+                MessageBox.Show("Fill in all fields.");
+            }
+            else
+            {
+                proje.NotEkle(txtNotAdi.Text,txtKategori.Text,txtNot.Text);
+                MessageBox.Show("Note added.");
+                txtKategori.Clear();
+                txtNot.Clear();
+                txtNotAdi.Clear();
+            }
         }
     }
 }

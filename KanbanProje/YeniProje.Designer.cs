@@ -124,6 +124,7 @@
             this.Name = "YeniProje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YeniProje";
+            this.Load += new System.EventHandler(this.YeniProje_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

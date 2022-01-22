@@ -1,4 +1,5 @@
 ﻿using KanbanProje.Properties;
+using Kanboard.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +16,20 @@ namespace KanbanProje
     {
         private bool acikMi;
         private bool mouseDown;
-        public AnaPencere()
+        Giris giris;
+        Proje proje;
+        public AnaPencere(Proje gelenProje, Giris gelenGiris)
         {
             InitializeComponent();
-            kanban.MdiParent = this;
+            
+            proje=gelenProje;
+            giris=gelenGiris;
         }
-        KanBanBoard kanban = new KanBanBoard();
+        KanBanBoard kanban;
         private void btnKanBan_Click(object sender, EventArgs e)
         {
+            kanban =new KanBanBoard(proje);
+            kanban.MdiParent = this;
             kanban.Show();
             timer1.Start();
         }
@@ -97,7 +104,15 @@ namespace KanbanProje
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+             new Giris();
+            giris.Show();
+        }
+
+        private void AnaPencere_Load(object sender, EventArgs e)
+        {
+            lblKullanici.Text = proje.Kullanici;
+            lblProjeAdi.Text = proje.ProjeAdi;
         }
     }
 }
