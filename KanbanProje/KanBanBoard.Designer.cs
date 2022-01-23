@@ -156,7 +156,7 @@
             // lbDoing
             // 
             this.lbDoing.AllowDrop = true;
-            this.lbDoing.BackColor = System.Drawing.Color.OliveDrab;
+            this.lbDoing.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.lbDoing.ContextMenuStrip = this.contextMenuStrip1;
             this.lbDoing.Font = new System.Drawing.Font("Txt_IV25", 12F, System.Drawing.FontStyle.Bold);
             this.lbDoing.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -174,7 +174,7 @@
             // lbDone
             // 
             this.lbDone.AllowDrop = true;
-            this.lbDone.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.lbDone.BackColor = System.Drawing.Color.OliveDrab;
             this.lbDone.ContextMenuStrip = this.contextMenuStrip1;
             this.lbDone.Font = new System.Drawing.Font("Txt_IV25", 12F, System.Drawing.FontStyle.Bold);
             this.lbDone.ForeColor = System.Drawing.SystemColors.WindowText;
