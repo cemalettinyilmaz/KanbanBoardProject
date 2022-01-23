@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,6 +36,14 @@
             this.lbTodo = new System.Windows.Forms.ListBox();
             this.lbDoing = new System.Windows.Forms.ListBox();
             this.lbDone = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -84,6 +93,7 @@
             // 
             this.lbTodo.AllowDrop = true;
             this.lbTodo.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.lbTodo.ContextMenuStrip = this.contextMenuStrip1;
             this.lbTodo.Font = new System.Drawing.Font("Txt_IV25", 20F, System.Drawing.FontStyle.Bold);
             this.lbTodo.FormattingEnabled = true;
             this.lbTodo.ItemHeight = 33;
@@ -91,15 +101,18 @@
             this.lbTodo.Name = "lbTodo";
             this.lbTodo.Size = new System.Drawing.Size(240, 433);
             this.lbTodo.TabIndex = 3;
+            this.lbTodo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KanBanBoard_MouseClick);
             this.lbTodo.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
             this.lbTodo.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_DragEnter);
             this.lbTodo.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
             this.lbTodo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
+            this.lbTodo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbTodo_MouseUp);
             // 
             // lbDoing
             // 
             this.lbDoing.AllowDrop = true;
             this.lbDoing.BackColor = System.Drawing.Color.OliveDrab;
+            this.lbDoing.ContextMenuStrip = this.contextMenuStrip1;
             this.lbDoing.Font = new System.Drawing.Font("Txt_IV25", 20F, System.Drawing.FontStyle.Bold);
             this.lbDoing.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lbDoing.FormattingEnabled = true;
@@ -117,6 +130,7 @@
             // 
             this.lbDone.AllowDrop = true;
             this.lbDone.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.lbDone.ContextMenuStrip = this.contextMenuStrip1;
             this.lbDone.Font = new System.Drawing.Font("Txt_IV25", 20F, System.Drawing.FontStyle.Bold);
             this.lbDone.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lbDone.FormattingEnabled = true;
@@ -129,6 +143,51 @@
             this.lbDone.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_DragEnter);
             this.lbDone.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
             this.lbDone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Txt_IV25", 9F);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 70);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pasteToolStripMenuItem1});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(103, 26);
+            // 
+            // pasteToolStripMenuItem1
+            // 
+            this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
+            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pasteToolStripMenuItem1.Text = "Paste";
             // 
             // KanBanBoard
             // 
@@ -148,6 +207,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KanBanBoard";
             this.Load += new System.EventHandler(this.KanBanBoard_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -160,5 +221,11 @@
         private System.Windows.Forms.ListBox lbTodo;
         private System.Windows.Forms.ListBox lbDoing;
         private System.Windows.Forms.ListBox lbDone;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem1;
     }
 }
