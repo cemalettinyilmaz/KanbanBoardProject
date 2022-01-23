@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
+using Brushes = System.Windows.Media.Brushes;
+using Color = System.Drawing.Color;
 
 namespace KanbanProje
 {
@@ -15,10 +18,16 @@ namespace KanbanProje
     {
         Proje proje;
         Notlar kopyalananNot;
-        public KanBanBoard(Proje gelenProje)
+        ListBox listbox_Item_Alinan;
+        ListBox lstbox_Item_Birakilan;
+        int Listbox_Index = 0;
+        AnaPencere anaForm;
+
+        public KanBanBoard(Proje gelenProje,AnaPencere gelenForm)
         {
             InitializeComponent();
             proje = gelenProje;
+            anaForm = gelenForm;
         }
 
         private void KanBanBoard_Load(object sender, EventArgs e)
@@ -32,7 +41,7 @@ namespace KanbanProje
             lbDone.Items.Clear();
             lbDoing.Items.Clear();
             lbTodo.Items.Clear();
-
+            lbKategoriler.Items.Clear();
             foreach (var item in proje.todoList)
             {
                 lbTodo.Items.Add(item);
@@ -45,6 +54,15 @@ namespace KanbanProje
             {
                 lbDone.Items.Add(item);
             }
+
+            foreach (var item in proje.Kategoriler)
+            {
+
+                lbKategoriler.Items.Add(item.Kategori);
+
+            }
+
+
 
 
         }
@@ -67,10 +85,6 @@ namespace KanbanProje
                 e.Effect = DragDropEffects.All;
         }
 
-        ListBox listbox_Item_Alinan;
-        ListBox lstbox_Item_Birakilan;
-        int Listbox_Index = 0;
-
         private void listBox_MouseDown(object sender, MouseEventArgs e)
         {
             listbox_Item_Alinan = sender as ListBox;
@@ -89,15 +103,10 @@ namespace KanbanProje
 
                 if (index == listbox_Item_Alinan.SelectedIndex)
                 {
-                   contextMenuStrip1.Show(MousePosition);
+                    contextMenuStrip1.Show(MousePosition);
                 }
-                int index2 =listbox_Item_Alinan.IndexFromPoint(e.Location);
-                //if (index2 != listbox_Item_Alinan.NoMatches && kopyalananNot != null)
-                //{
 
-                //   contextMenuStrip2.Show(MousePosition);
-                //}
-                
+
 
             }
 
@@ -110,7 +119,7 @@ namespace KanbanProje
             Notlar transferNotu = (Notlar)listbox_Item_Alinan.Items[Listbox_Index];
 
             listbox_Item_Alinan.Items.Remove(listbox_Item_Alinan.Items[Listbox_Index]);
-           
+
 
             if (lstbox_Item_Birakilan.Name == lbDoing.Name)
             {
@@ -165,8 +174,8 @@ namespace KanbanProje
         }
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            kopyalananNot= (Notlar)listbox_Item_Alinan.SelectedItem; 
+
+            kopyalananNot = (Notlar)listbox_Item_Alinan.SelectedItem;
         }
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,5 +197,75 @@ namespace KanbanProje
         {
 
         }
+        bool acikMi;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            if (acikMi)
+            {
+
+                panel1.Height += 10;
+                if (panel1.Size == panel1.MaximumSize)
+                {
+                    timer1.Stop();
+                    acikMi = false;
+
+                }
+            }
+            else
+            {
+
+                panel1.Height -= 10;
+                if (panel1.Size == panel1.MinimumSize)
+                {
+                    timer1.Stop();
+                    acikMi = true;
+
+                }
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+        Color alinanRenk;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            alinanRenk = colorDialog1.Color;
+        }
+
+        private void btnKategoriEkle_Click(object sender, EventArgs e)
+        {
+            if (proje.KategoriEkle(txtKategoriAdi.Text, alinanRenk))
+                MessageBox.Show("Category added.");
+            Listele();
+
+        }
+
+        private void lbKategoriler_DrawItem(object sender, DrawItemEventArgs e)
+        {
+           
+           
+
+
+        }
+
+        private void lbTodo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void showNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notlar goruntulenecekNot = new Notlar();
+            goruntulenecekNot = (Notlar)listbox_Item_Alinan.SelectedItem;
+            NotGoruntule gorutulenecekForm = new NotGoruntule(goruntulenecekNot);
+            gorutulenecekForm.MdiParent = anaForm;
+            gorutulenecekForm.Show();
+        }
     }
 }
+

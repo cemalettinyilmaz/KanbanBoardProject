@@ -53,12 +53,19 @@ namespace KanbanProje
             int u = 140-txtNot.TextLength;
             lblKalan.Text = u.ToString();
 
+           
+
         }
 
         private void NotEkle_Load(object sender, EventArgs e)
         {
             txtNot.MaxLength = 140;
             lblKalan.Text = 140.ToString();
+            foreach (var item in proje.Kategoriler)
+            {
+                txtKategori.Items.Add(item.Kategori);
+            }
+            
         }
 
         private void btnNotEkle_Click(object sender, EventArgs e)
@@ -71,10 +78,15 @@ namespace KanbanProje
             {
                 proje.NotEkle(txtNotAdi.Text,txtKategori.Text,txtNot.Text);
                 MessageBox.Show("Note added.");
-                txtKategori.Clear();
+                txtKategori.SelectedIndex = 0;
                 txtNot.Clear();
                 txtNotAdi.Clear();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

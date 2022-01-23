@@ -95,6 +95,7 @@ namespace KanbanProje
 
         public void comboboxDuzenle()
         {
+            cmbProjeler.Items.Clear();
             foreach (var item in projeListe)
             {
                 cmbProjeler.Items.Add(item.ProjeAdi);

@@ -33,11 +33,11 @@
             this.txtNotAdi = new System.Windows.Forms.TextBox();
             this.lblNotAdi = new System.Windows.Forms.Label();
             this.lblKategori = new System.Windows.Forms.Label();
-            this.txtKategori = new System.Windows.Forms.TextBox();
             this.txtNot = new System.Windows.Forms.RichTextBox();
             this.lblNot = new System.Windows.Forms.Label();
             this.btnNotEkle = new System.Windows.Forms.Button();
             this.lblKalan = new System.Windows.Forms.Label();
+            this.txtKategori = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(370, 40);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
@@ -93,14 +94,6 @@
             this.lblKategori.Size = new System.Drawing.Size(71, 14);
             this.lblKategori.TabIndex = 3;
             this.lblKategori.Text = "Category";
-            // 
-            // txtKategori
-            // 
-            this.txtKategori.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
-            this.txtKategori.Location = new System.Drawing.Point(98, 91);
-            this.txtKategori.Name = "txtKategori";
-            this.txtKategori.Size = new System.Drawing.Size(229, 21);
-            this.txtKategori.TabIndex = 2;
             // 
             // txtNot
             // 
@@ -143,18 +136,27 @@
             this.lblKalan.TabIndex = 3;
             this.lblKalan.Text = "Note";
             // 
+            // txtKategori
+            // 
+            this.txtKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtKategori.FormattingEnabled = true;
+            this.txtKategori.Location = new System.Drawing.Point(98, 91);
+            this.txtKategori.Name = "txtKategori";
+            this.txtKategori.Size = new System.Drawing.Size(229, 21);
+            this.txtKategori.TabIndex = 6;
+            // 
             // NotEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 272);
+            this.Controls.Add(this.txtKategori);
             this.Controls.Add(this.btnNotEkle);
             this.Controls.Add(this.txtNot);
             this.Controls.Add(this.lblKalan);
             this.Controls.Add(this.lblNot);
             this.Controls.Add(this.lblKategori);
             this.Controls.Add(this.lblNotAdi);
-            this.Controls.Add(this.txtKategori);
             this.Controls.Add(this.txtNotAdi);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -175,10 +177,10 @@
         private System.Windows.Forms.TextBox txtNotAdi;
         private System.Windows.Forms.Label lblNotAdi;
         private System.Windows.Forms.Label lblKategori;
-        private System.Windows.Forms.TextBox txtKategori;
         private System.Windows.Forms.RichTextBox txtNot;
         private System.Windows.Forms.Label lblNot;
         private System.Windows.Forms.Button btnNotEkle;
         private System.Windows.Forms.Label lblKalan;
+        private System.Windows.Forms.ComboBox txtKategori;
     }
 }

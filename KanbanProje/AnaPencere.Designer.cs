@@ -80,23 +80,23 @@
             // lblProjeAdi
             // 
             this.lblProjeAdi.Font = new System.Drawing.Font("Txt_IV25", 14F);
-            this.lblProjeAdi.Location = new System.Drawing.Point(134, 5);
+            this.lblProjeAdi.Location = new System.Drawing.Point(121, 0);
             this.lblProjeAdi.Name = "lblProjeAdi";
-            this.lblProjeAdi.Size = new System.Drawing.Size(164, 35);
+            this.lblProjeAdi.Size = new System.Drawing.Size(164, 20);
             this.lblProjeAdi.TabIndex = 2;
             // 
             // lblKullanici
             // 
             this.lblKullanici.Font = new System.Drawing.Font("Txt_IV25", 14F);
-            this.lblKullanici.Location = new System.Drawing.Point(456, 8);
+            this.lblKullanici.Location = new System.Drawing.Point(121, 22);
             this.lblKullanici.Name = "lblKullanici";
-            this.lblKullanici.Size = new System.Drawing.Size(98, 35);
+            this.lblKullanici.Size = new System.Drawing.Size(412, 35);
             this.lblKullanici.TabIndex = 2;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Txt_IV25", 14F);
-            this.label2.Location = new System.Drawing.Point(339, 5);
+            this.label2.Font = new System.Drawing.Font("Txt_IV25", 12F);
+            this.label2.Location = new System.Drawing.Point(47, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 35);
             this.label2.TabIndex = 2;
@@ -105,9 +105,9 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Txt_IV25", 12F);
-            this.label3.Location = new System.Drawing.Point(12, 8);
+            this.label3.Location = new System.Drawing.Point(12, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 35);
+            this.label3.Size = new System.Drawing.Size(116, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Project =";
             // 

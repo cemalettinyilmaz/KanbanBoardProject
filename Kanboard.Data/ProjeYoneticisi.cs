@@ -25,7 +25,7 @@ namespace Kanboard.Data
             {
                 return false;
             }
-            else
+            else if(!ProjeAdiVarMi(projeAdi))
             {
                 Projeler.Add(new Proje()
                 {
@@ -35,6 +35,7 @@ namespace Kanboard.Data
                 });
                 return true;
             }
+            return false;
         }
         public Proje projeAc(string projeAdi)
         {

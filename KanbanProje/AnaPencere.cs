@@ -28,7 +28,7 @@ namespace KanbanProje
         KanBanBoard kanban;
         private void btnKanBan_Click(object sender, EventArgs e)
         {
-            kanban =new KanBanBoard(proje);
+            kanban =new KanBanBoard(proje,this);
             kanban.MdiParent = this;
             kanban.Show();
             timer1.Start();

@@ -15,12 +15,12 @@ namespace KanbanProje
     {
         bool mouseDown;
         ProjeYoneticisi yonetici;
-    
+
         public YeniProje(ProjeYoneticisi gelenYonetici)
         {
             InitializeComponent();
             yonetici = gelenYonetici;
-            
+
         }
 
         #region Kontroller
@@ -47,28 +47,28 @@ namespace KanbanProje
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
-           
-            
+
+
         }
 
         #endregion
 
         private void btnOlustur_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtKullaniciAdi.Text) && !string.IsNullOrEmpty(txtProjeAdi.Text))
+            if (!string.IsNullOrEmpty(txtKullaniciAdi.Text) && !string.IsNullOrEmpty(txtProjeAdi.Text))
             {
 
-            bool projeOlustuMu = (yonetici.yeniProjeOlustur(txtProjeAdi.Text, txtKullaniciAdi.Text));
+                bool projeOlustuMu = (yonetici.yeniProjeOlustur(txtProjeAdi.Text, txtKullaniciAdi.Text));
 
-            if (projeOlustuMu)
+                if (projeOlustuMu)
                 {
-                MessageBox.Show("Project Created");
+                    MessageBox.Show("Project Created");
                     this.Hide();
-                   
+
 
                 }
-            else
-                MessageBox.Show("This project name has been used before. Please enter a new project name.");
+                else
+                    MessageBox.Show("This project name has been used before. Please enter a new project name.");
             }
             else
                 MessageBox.Show("Fill in all fields.");
@@ -76,7 +76,7 @@ namespace KanbanProje
 
         private void YeniProje_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
