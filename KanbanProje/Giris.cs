@@ -1,9 +1,11 @@
 ﻿using Kanboard.Data;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +15,25 @@ namespace KanbanProje
 {
     public partial class Giris : Form
     {
-        bool mouseDown; 
+        bool mouseDown;
+        ProjeYoneticisi projeYonetici;
         public Giris()
         {
             InitializeComponent();
+            try
+            {
+                string json = File.ReadAllText("veri.json");
+                projeYonetici = JsonConvert.DeserializeObject<ProjeYoneticisi>(json);
+
+            }
+            catch (Exception)
+            {
+
+                projeYonetici = new ProjeYoneticisi();
+            }
             projeListe = projeYonetici.Projeler;
+            comboboxDuzenle();
         }
-        ProjeYoneticisi projeYonetici=new ProjeYoneticisi();
         List<Proje> projeListe;
         Proje proje;
 
@@ -86,6 +100,12 @@ namespace KanbanProje
                 cmbProjeler.Items.Add(item.ProjeAdi);
             }
 
+        }
+
+        private void Giris_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string json = JsonConvert.SerializeObject(projeYonetici);
+            File.WriteAllText("veri.json", json);
         }
     }
 }

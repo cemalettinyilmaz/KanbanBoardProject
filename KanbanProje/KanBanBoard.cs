@@ -28,20 +28,21 @@ namespace KanbanProje
 
         void Listele()
         {
+
             foreach (var item in proje.todoList)
             {
-                lbTodo.Items.Add(item.NotAdi);
+                lbTodo.Items.Add(item);
             }
             foreach (var item in proje.doingList)
             {
-                lbDoing.Items.Add(item.NotAdi);
+                lbDoing.Items.Add(item);
             }
             foreach (var item in proje.doneList)
             {
-                lbDone.Items.Add(item.NotAdi);
+                lbDone.Items.Add(item);
             }
 
-          
+
         }
 
         private void btnNotEkle_Click(object sender, EventArgs e)
@@ -75,15 +76,21 @@ namespace KanbanProje
                 return;
             if (e.Button == MouseButtons.Left)
                 listbox_Item_Alinan.DoDragDrop(listbox_Item_Alinan.Items[Listbox_Index].ToString(), DragDropEffects.All);
+          
         }
 
         private void listBox_DragDrop(object sender, DragEventArgs e)
         {
             lstbox_Item_Birakilan = sender as ListBox;
             lstbox_Item_Birakilan.Items.Add(listbox_Item_Alinan.Items[Listbox_Index]);
-
-
             listbox_Item_Alinan.Items.Remove(listbox_Item_Alinan.Items[Listbox_Index]);
+            //TODO BİRAKİLAN ALINAN İSİMLERE GÖRE KONTROL ET VE LİSTELERDEN YAZDIR VE SİLDİR.
+
+            //Notlar transferNotu = (Notlar)listbox_Item_Alinan.Items[Listbox_Index];
+            if (lstbox_Item_Birakilan.Name==lbDoing.Name)
+            {
+            }
+
         }
 
       

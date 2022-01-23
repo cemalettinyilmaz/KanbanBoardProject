@@ -106,6 +106,7 @@
             this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Giris_FormClosing);
             this.Load += new System.EventHandler(this.Giris_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
