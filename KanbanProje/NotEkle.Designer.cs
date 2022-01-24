@@ -81,9 +81,9 @@
             this.lblNotAdi.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
             this.lblNotAdi.Location = new System.Drawing.Point(12, 58);
             this.lblNotAdi.Name = "lblNotAdi";
-            this.lblNotAdi.Size = new System.Drawing.Size(71, 14);
+            this.lblNotAdi.Size = new System.Drawing.Size(79, 14);
             this.lblNotAdi.TabIndex = 3;
-            this.lblNotAdi.Text = "Not Name";
+            this.lblNotAdi.Text = "Note Name";
             // 
             // lblKategori
             // 
