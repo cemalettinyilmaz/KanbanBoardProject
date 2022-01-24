@@ -180,7 +180,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 43);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Go";
+            this.button1.Text = "Click";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button1.UseVisualStyleBackColor = false;
