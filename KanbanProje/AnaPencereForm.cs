@@ -49,7 +49,6 @@ namespace KanbanProje
                 {
                     timer1.Stop();
                     acikMi = false;
-
                 }
             }
             else
@@ -60,12 +59,18 @@ namespace KanbanProje
                 {
                     timer1.Stop();
                     acikMi = true;
-
                 }
-
             }
-
-
+            if (proje.OyunZamani > DateTime.Now)
+            {
+                btnBreak.Enabled = false;
+                btnBreak.Text = "Take a Break\r\n" + "after " + (proje.OyunZamani - DateTime.Now).Minutes.ToString() + " minutes later.";
+            }
+            else
+            {
+                btnBreak.Enabled = true;
+                btnBreak.Text = "Take a Break";
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -106,17 +111,21 @@ namespace KanbanProje
         }
         private void AnaPencere_Load(object sender, EventArgs e)
         {
-            lblProjeAdi.Text = $"Project : {proje.ProjeAdi} User : {proje.Kullanici}";
+            lblProjeAdi.Text = $"[Project] : {proje.ProjeAdi} [User] : {proje.Kullanici}";
         }
         TakeABreakGameForm game;
         private void btnBreak_Click(object sender, EventArgs e)
         {
+            DateTime tiklamaZamani = DateTime.Now;
+            proje.OyunZamani = tiklamaZamani.AddHours(1);
+
             if (kanbanAcikMi)
                 kanban.Close();
             game = new TakeABreakGameForm();
             game.MdiParent = this;
             game.Location = new Point((this.Width - game.Width) / 2, (this.Height - game.Height) / 2);
             game.Show();
+            timer1.Start();
         }
     }
 }

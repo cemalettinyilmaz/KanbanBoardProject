@@ -19,13 +19,17 @@ namespace KanbanProje
         int puan = 0;
         bool basladiMi = false;
         int level = 1;
+        int kalanDakika = 15;
+        Random rnd = new Random();
+        int hiz = 20;
         private void Form1_Load(object sender, EventArgs e)
         {
             lblPuan.Text = "Score : 0\r\n Level : 1";
+            timer2.Start();
+            timer3.Start();
+            lblKalanSure.Text = $"After {kalanDakika} minutes, the break is over.";
 
         }
-        Random rnd = new Random();
-        int hiz = 20;
         private void timer1_Tick(object sender, EventArgs e)
         {
             pictureBox1.Top += 25;
@@ -107,6 +111,15 @@ namespace KanbanProje
             lblSpace.Text = "Press Space";
             lblA.Text = "<=A";
             lblD.Text = "D=>";
+        }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            kalanDakika -= 1;
+            lblKalanSure.Text = $"After {kalanDakika} minutes, the break is over.";
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblKategori = new System.Windows.Forms.Label();
             this.txtNotName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCategory = new System.Windows.Forms.TextBox();
@@ -42,6 +43,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Txt_IV25", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
             this.label1.Location = new System.Drawing.Point(309, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 40);
@@ -53,6 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel1.Controls.Add(this.lblKategori);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
@@ -63,6 +66,17 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // lblKategori
+            // 
+            this.lblKategori.AutoSize = true;
+            this.lblKategori.Font = new System.Drawing.Font("Txt_IV25", 12F, System.Drawing.FontStyle.Bold);
+            this.lblKategori.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblKategori.Location = new System.Drawing.Point(3, 9);
+            this.lblKategori.Name = "lblKategori";
+            this.lblKategori.Size = new System.Drawing.Size(113, 20);
+            this.lblKategori.TabIndex = 2;
+            this.lblKategori.Text = "Category";
             // 
             // txtNotName
             // 
@@ -116,7 +130,7 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Note:";
             // 
-            // NotGoruntule
+            // NotGoruntuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,11 +144,12 @@
             this.Controls.Add(this.txtNotName);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NotGoruntule";
+            this.Name = "NotGoruntuleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NotGoruntule";
             this.Load += new System.EventHandler(this.NotGoruntule_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +165,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txtNote;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblKategori;
     }
 }

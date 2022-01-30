@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblProjeAdi = new System.Windows.Forms.Label();
-            this.lblKullanici = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlDropDown = new System.Windows.Forms.Panel();
             this.btnBreak = new System.Windows.Forms.Button();
@@ -61,7 +60,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.ForestGreen;
             this.panel1.Controls.Add(this.lblProjeAdi);
-            this.panel1.Controls.Add(this.lblKullanici);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
@@ -79,16 +77,8 @@
             this.lblProjeAdi.Font = new System.Drawing.Font("Txt_IV25", 12F);
             this.lblProjeAdi.Location = new System.Drawing.Point(8, 9);
             this.lblProjeAdi.Name = "lblProjeAdi";
-            this.lblProjeAdi.Size = new System.Drawing.Size(402, 20);
+            this.lblProjeAdi.Size = new System.Drawing.Size(1114, 20);
             this.lblProjeAdi.TabIndex = 2;
-            // 
-            // lblKullanici
-            // 
-            this.lblKullanici.Font = new System.Drawing.Font("Txt_IV25", 14F);
-            this.lblKullanici.Location = new System.Drawing.Point(121, 22);
-            this.lblKullanici.Name = "lblKullanici";
-            this.lblKullanici.Size = new System.Drawing.Size(412, 35);
-            this.lblKullanici.TabIndex = 2;
             // 
             // timer1
             // 
@@ -212,7 +202,6 @@
         private System.Windows.Forms.Button btnKanBan;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblProjeAdi;
-        private System.Windows.Forms.Label lblKullanici;
         private System.Windows.Forms.Button btnBreak;
     }
 }

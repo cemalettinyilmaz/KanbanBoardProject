@@ -19,6 +19,8 @@ namespace KanbanProje
         {
             InitializeComponent();
             not = gelenNot;
+            panel1.BackColor = gelenNot.KategoriRengi;
+            lblKategori.Text = gelenNot.Kategori;
         }
         private void NotGoruntule_Load(object sender, EventArgs e)
         {

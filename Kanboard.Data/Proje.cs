@@ -19,19 +19,28 @@ namespace Kanboard.Data
         }
         public string ProjeAdi { get; set; }
         public string Kullanici { get; set; }
+        public DateTime OyunZamani { get; set; }
         public List<Notlar> todoList { get; set; }
         public List<Notlar> doingList { get; set; }
         public List<Notlar> doneList { get; set; }
         public List<Notlar> Kategoriler { get; set; }
         public bool NotEkle(string notAdi, string kategori, string not)
         {
+            Color gelenRenk = Color.Black;
+            foreach (var item in Kategoriler)
+            {
+                if (kategori == item.Kategori)
+                {
+                    gelenRenk = item.KategoriRengi;
+                }
+            }
             todoList.Add(new Notlar()
             {
                 NotAdi = notAdi,
                 Kategori = kategori,
-                BirakilanNot = not
-
-            }); ;
+                BirakilanNot = not,
+                KategoriRengi = gelenRenk
+            });
             return true;
         }
         public bool KategoriEkle(string kategoriAdi, Color color)

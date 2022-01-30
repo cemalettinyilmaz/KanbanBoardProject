@@ -40,6 +40,9 @@
             this.lblSpace = new System.Windows.Forms.Label();
             this.lblA = new System.Windows.Forms.Label();
             this.lblD = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.lblKalanSure = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,7 +56,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(70, -76);
+            this.pictureBox3.Location = new System.Drawing.Point(72, -85);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(60, 98);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +85,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(84, 302);
+            this.pictureBox2.Location = new System.Drawing.Point(83, 302);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(64, 106);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,7 +107,7 @@
             this.lblPuan.AutoSize = true;
             this.lblPuan.BackColor = System.Drawing.Color.Black;
             this.lblPuan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPuan.Location = new System.Drawing.Point(12, 9);
+            this.lblPuan.Location = new System.Drawing.Point(12, 32);
             this.lblPuan.Name = "lblPuan";
             this.lblPuan.Size = new System.Drawing.Size(35, 13);
             this.lblPuan.TabIndex = 9;
@@ -144,7 +147,27 @@
             this.lblD.TabIndex = 9;
             this.lblD.Text = "D=>";
             // 
-            // TakeABreakFormGame
+            // timer2
+            // 
+            this.timer2.Interval = 900000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 60000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // lblKalanSure
+            // 
+            this.lblKalanSure.BackColor = System.Drawing.Color.Black;
+            this.lblKalanSure.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblKalanSure.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblKalanSure.Location = new System.Drawing.Point(0, 0);
+            this.lblKalanSure.Name = "lblKalanSure";
+            this.lblKalanSure.Size = new System.Drawing.Size(237, 13);
+            this.lblKalanSure.TabIndex = 9;
+            // 
+            // TakeABreakGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,6 +175,7 @@
             this.Controls.Add(this.lblD);
             this.Controls.Add(this.lblA);
             this.Controls.Add(this.lblSpace);
+            this.Controls.Add(this.lblKalanSure);
             this.Controls.Add(this.lblPuan);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
@@ -159,7 +183,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TakeABreakFormGame";
+            this.Name = "TakeABreakGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TakeABreakFormGame";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -183,5 +207,8 @@
         private System.Windows.Forms.Label lblSpace;
         private System.Windows.Forms.Label lblA;
         private System.Windows.Forms.Label lblD;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label lblKalanSure;
     }
 }

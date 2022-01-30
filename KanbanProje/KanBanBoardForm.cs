@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using Brush = System.Windows.Media.Brush;
 using Brushes = System.Windows.Media.Brushes;
 using Color = System.Drawing.Color;
 
@@ -31,6 +32,7 @@ namespace KanbanProje
         private void KanBanBoard_Load(object sender, EventArgs e)
         {
             Listele();
+            rbBlack.Checked = true;
         }
         void Listele()
         {
@@ -187,10 +189,18 @@ namespace KanbanProje
         private void button2_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
-            alinanRenk = colorDialog1.Color;
+
         }
         private void btnKategoriEkle_Click(object sender, EventArgs e)
         {
+            if (rbBlack.Checked)
+                alinanRenk = Color.Black;
+            else if (rbBlue.Checked)
+                alinanRenk = Color.Blue;
+            else if (rbRed.Checked)
+                alinanRenk = Color.Red;
+            else if (rbYellow.Checked)
+                alinanRenk = Color.Yellow;
             if (proje.KategoriEkle(txtKategoriAdi.Text, alinanRenk))
                 MessageBox.Show("Category added.");
             Listele();
@@ -204,6 +214,103 @@ namespace KanbanProje
                 NotGoruntuleForm gorutulenecekForm = new NotGoruntuleForm(goruntulenecekNot);
                 gorutulenecekForm.MdiParent = anaForm;
                 gorutulenecekForm.Show();
+            }
+        }
+        private void lbTodo_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index > -1)
+            {
+                foreach (var item in lbTodo.Items)
+                {
+                    string selectedItem = lbTodo.Items[e.Index].ToString();
+                    Font font = new Font("Txt_IV25", 14);
+                    Color gelenRenk = Color.Black;
+
+                    foreach (var item1 in proje.todoList)
+                    {
+                        if (selectedItem == item1.NotAdi)
+                        {
+                            gelenRenk = item1.KategoriRengi;
+                        }
+                    }
+                    SolidBrush solidBrush = new SolidBrush(gelenRenk);
+                    int left = e.Bounds.Left;
+                    int top = e.Bounds.Top;
+                    e.DrawBackground();
+                    e.Graphics.DrawString(selectedItem, font, solidBrush, left, top);
+                }
+            }
+        }
+        private void lbDoing_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index > -1)
+            {
+                foreach (var item in lbDoing.Items)
+                {
+                    string selectedItem = lbDoing.Items[e.Index].ToString();
+                    Font font = new Font("Txt_IV25", 14);
+                    Color gelenRenk = Color.Black;
+                    foreach (var item1 in proje.doingList)
+                    {
+                        if (selectedItem == item1.NotAdi)
+                        {
+                            gelenRenk = item1.KategoriRengi;
+                        }
+                    }
+                    SolidBrush solidBrush = new SolidBrush(gelenRenk);
+                    int left = e.Bounds.Left;
+                    int top = e.Bounds.Top;
+                    e.DrawBackground();
+                    e.Graphics.DrawString(selectedItem, font, solidBrush, left, top);
+                }
+            }
+        }
+        private void lbDone_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index > -1)
+            {
+                foreach (var item in lbDone.Items)
+                {
+                    string selectedItem = lbDone.Items[e.Index].ToString();
+                    Font font = new Font("Txt_IV25", 14);
+                    Color gelenRenk = Color.Black;
+                    foreach (var item1 in proje.doneList)
+                    {
+                        if (selectedItem == item1.NotAdi)
+                        {
+                            gelenRenk = item1.KategoriRengi;
+                        }
+                    }
+                    SolidBrush solidBrush = new SolidBrush(gelenRenk);
+                    int left = e.Bounds.Left;
+                    int top = e.Bounds.Top;
+                    e.DrawBackground();
+                    e.Graphics.DrawString(selectedItem, font, solidBrush, left, top);
+                }
+            }
+        }
+        private void lbKategoriler_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index > -1)
+            {
+                foreach (var item in lbKategoriler.Items)
+                {
+                    string selectedItem = lbKategoriler.Items[e.Index].ToString();
+                    Font font = new Font("Txt_IV25", 8);
+                    Color gelenRenk = Color.Black;
+                    foreach (var item1 in proje.Kategoriler)
+                    {
+                        if (selectedItem == item1.Kategori)
+                        {
+                            gelenRenk = item1.KategoriRengi;
+                        }
+                    }
+                    SolidBrush solidBrush = new SolidBrush(gelenRenk);
+                    int left = e.Bounds.Left;
+                    int top = e.Bounds.Top;
+                    e.DrawBackground();
+                    e.Graphics.DrawString(selectedItem, font, solidBrush, left, top);
+                }
             }
         }
     }
