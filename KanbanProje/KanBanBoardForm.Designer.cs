@@ -109,8 +109,6 @@
             this.lbTodo.Name = "lbTodo";
             this.lbTodo.Size = new System.Drawing.Size(240, 424);
             this.lbTodo.TabIndex = 3;
-            this.lbTodo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbTodo_MouseClick);
-            this.lbTodo.SelectedIndexChanged += new System.EventHandler(this.lbTodo_SelectedIndexChanged);
             this.lbTodo.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
             this.lbTodo.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_DragEnter);
             this.lbTodo.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
@@ -131,28 +129,28 @@
             // showNoteToolStripMenuItem
             // 
             this.showNoteToolStripMenuItem.Name = "showNoteToolStripMenuItem";
-            this.showNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showNoteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.showNoteToolStripMenuItem.Text = "Show Note";
             this.showNoteToolStripMenuItem.Click += new System.EventHandler(this.showNoteToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 

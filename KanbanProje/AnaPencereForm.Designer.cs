@@ -36,11 +36,11 @@
             this.lblKullanici = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlDropDown = new System.Windows.Forms.Panel();
+            this.btnBreak = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnKanBan = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnBreak = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlDropDown.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +109,19 @@
             this.pnlDropDown.Size = new System.Drawing.Size(193, 43);
             this.pnlDropDown.TabIndex = 4;
             // 
+            // btnBreak
+            // 
+            this.btnBreak.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnBreak.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBreak.Location = new System.Drawing.Point(0, 128);
+            this.btnBreak.Name = "btnBreak";
+            this.btnBreak.Size = new System.Drawing.Size(193, 43);
+            this.btnBreak.TabIndex = 7;
+            this.btnBreak.Text = "Take a Break";
+            this.btnBreak.UseVisualStyleBackColor = false;
+            this.btnBreak.Click += new System.EventHandler(this.btnBreak_Click);
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -165,23 +178,11 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnBreak
-            // 
-            this.btnBreak.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnBreak.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBreak.Location = new System.Drawing.Point(0, 128);
-            this.btnBreak.Name = "btnBreak";
-            this.btnBreak.Size = new System.Drawing.Size(193, 43);
-            this.btnBreak.TabIndex = 7;
-            this.btnBreak.Text = "Take a Break";
-            this.btnBreak.UseVisualStyleBackColor = false;
-            this.btnBreak.Click += new System.EventHandler(this.btnBreak_Click);
-            // 
             // AnaPencereForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.pnlDropDown);

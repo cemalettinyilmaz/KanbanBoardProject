@@ -13,7 +13,6 @@ namespace Kanboard.Data
             Projeler = new List<Proje>();
         }
         public List<Proje> Projeler { get; set; }
-
         public bool ProjeAdiVarMi(string projeAdi)
         {
             return Projeler.Any(x => x.ProjeAdi == projeAdi);
@@ -41,5 +40,4 @@ namespace Kanboard.Data
             return Projeler.FirstOrDefault(x => x.ProjeAdi == projeAdi);
         }
     }
-
 }

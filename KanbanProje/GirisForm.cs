@@ -24,11 +24,9 @@ namespace KanbanProje
             {
                 string json = File.ReadAllText("veri.json");
                 projeYonetici = JsonConvert.DeserializeObject<ProjeYoneticisi>(json);
-
             }
             catch (Exception)
             {
-
                 projeYonetici = new ProjeYoneticisi();
             }
             projeListe = projeYonetici.Projeler;
@@ -36,43 +34,35 @@ namespace KanbanProje
         }
         List<Proje> projeListe;
         Proje proje;
-
-        #region Kontroller
-        
+        #region Kontroller        
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
         }
-
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if(mouseDown)
+            if (mouseDown)
             {
                 int mouseX = MousePosition.X - 200;
                 int mouseY = MousePosition.Y - 10;
                 this.SetDesktopLocation(mouseX, mouseY);
             }
         }
-
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         #endregion
-
         private void btnYeniProje_Click(object sender, EventArgs e)
         {
             YeniProjeForm yeniProje = new YeniProjeForm(projeYonetici);
             yeniProje.ShowDialog();
             comboboxDuzenle();
         }
-
         private void btnGiris_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cmbProjeler.Text))
@@ -80,19 +70,15 @@ namespace KanbanProje
             else
             {
                 proje = projeYonetici.projeAc(cmbProjeler.Text);
-                AnaPencereForm anaPencere = new AnaPencereForm(proje,this);
+                AnaPencereForm anaPencere = new AnaPencereForm(proje, this);
                 anaPencere.Show();
                 this.Hide();
             }
         }
-        
         private void Giris_Load(object sender, EventArgs e)
         {
-           
-           
-            
-        }
 
+        }
         public void comboboxDuzenle()
         {
             cmbProjeler.Items.Clear();
@@ -100,9 +86,7 @@ namespace KanbanProje
             {
                 cmbProjeler.Items.Add(item.ProjeAdi);
             }
-
         }
-
         private void Giris_FormClosing(object sender, FormClosingEventArgs e)
         {
             string json = JsonConvert.SerializeObject(projeYonetici);

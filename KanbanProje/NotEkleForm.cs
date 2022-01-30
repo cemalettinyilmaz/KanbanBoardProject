@@ -20,13 +20,11 @@ namespace KanbanProje
             InitializeComponent();
             proje = gelenProje;
         }
-
         #region Kontroller
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
         }
-
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
@@ -36,27 +34,20 @@ namespace KanbanProje
                 this.SetDesktopLocation(mouseX, mouseY);
             }
         }
-
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
         #endregion
-
         private void txtNot_TextChanged(object sender, EventArgs e)
         {
-            int u = 140-txtNot.TextLength;
+            int u = 140 - txtNot.TextLength;
             lblKalan.Text = u.ToString();
-
-           
-
         }
-
         private void NotEkle_Load(object sender, EventArgs e)
         {
             txtNot.MaxLength = 140;
@@ -65,25 +56,22 @@ namespace KanbanProje
             {
                 txtKategori.Items.Add(item.Kategori);
             }
-            
         }
-
         private void btnNotEkle_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtNotAdi.Text) || string.IsNullOrEmpty(txtNot.Text) || string.IsNullOrEmpty(txtKategori.Text))
+            if (string.IsNullOrEmpty(txtNotAdi.Text) || string.IsNullOrEmpty(txtNot.Text) || string.IsNullOrEmpty(txtKategori.Text))
             {
                 MessageBox.Show("Fill in all fields.");
             }
             else
             {
-                proje.NotEkle(txtNotAdi.Text,txtKategori.Text,txtNot.Text);
+                proje.NotEkle(txtNotAdi.Text, txtKategori.Text, txtNot.Text);
                 MessageBox.Show("Note added.");
                 txtKategori.SelectedIndex = 0;
                 txtNot.Clear();
                 txtNotAdi.Clear();
             }
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

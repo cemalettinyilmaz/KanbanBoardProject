@@ -37,6 +37,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPuan = new System.Windows.Forms.Label();
+            this.lblSpace = new System.Windows.Forms.Label();
+            this.lblA = new System.Windows.Forms.Label();
+            this.lblD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,7 +82,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(147, 302);
+            this.pictureBox2.Location = new System.Drawing.Point(84, 302);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(64, 106);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,11 +110,48 @@
             this.lblPuan.TabIndex = 9;
             this.lblPuan.Text = "label3";
             // 
+            // lblSpace
+            // 
+            this.lblSpace.AutoSize = true;
+            this.lblSpace.BackColor = System.Drawing.Color.Black;
+            this.lblSpace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSpace.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSpace.Location = new System.Drawing.Point(-1, 377);
+            this.lblSpace.Name = "lblSpace";
+            this.lblSpace.Size = new System.Drawing.Size(69, 15);
+            this.lblSpace.TabIndex = 9;
+            this.lblSpace.Text = "Press Space";
+            // 
+            // lblA
+            // 
+            this.lblA.AutoSize = true;
+            this.lblA.BackColor = System.Drawing.Color.Black;
+            this.lblA.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblA.Location = new System.Drawing.Point(52, 338);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(26, 13);
+            this.lblA.TabIndex = 9;
+            this.lblA.Text = "<=A";
+            // 
+            // lblD
+            // 
+            this.lblD.AutoSize = true;
+            this.lblD.BackColor = System.Drawing.Color.Black;
+            this.lblD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblD.Location = new System.Drawing.Point(153, 338);
+            this.lblD.Name = "lblD";
+            this.lblD.Size = new System.Drawing.Size(27, 13);
+            this.lblD.TabIndex = 9;
+            this.lblD.Text = "D=>";
+            // 
             // TakeABreakFormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(237, 420);
+            this.Controls.Add(this.lblD);
+            this.Controls.Add(this.lblA);
+            this.Controls.Add(this.lblSpace);
             this.Controls.Add(this.lblPuan);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
@@ -140,5 +180,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPuan;
+        private System.Windows.Forms.Label lblSpace;
+        private System.Windows.Forms.Label lblA;
+        private System.Windows.Forms.Label lblD;
     }
 }

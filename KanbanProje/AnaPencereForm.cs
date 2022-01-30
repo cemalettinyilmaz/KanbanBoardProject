@@ -15,31 +15,30 @@ namespace KanbanProje
     public partial class AnaPencereForm : Form
     {
         private bool acikMi;
+        bool kanbanAcikMi = false;
+        bool oyunAcikMi = false;
         private bool mouseDown;
         GirisForm giris;
         Proje proje;
         public AnaPencereForm(Proje gelenProje, GirisForm gelenGiris)
         {
             InitializeComponent();
-            
-            proje=gelenProje;
-            giris=gelenGiris;
+            proje = gelenProje;
+            giris = gelenGiris;
         }
         KanBanBoardForm kanban;
         private void btnKanBan_Click(object sender, EventArgs e)
         {
-            if(game!=null)
+            if (oyunAcikMi)
                 game.Close();
-            kanban =new KanBanBoardForm(proje,this);
+            kanban = new KanBanBoardForm(proje, this);
             kanban.MdiParent = this;
             kanban.Show();
             kanban.Dock = DockStyle.Fill;
+            kanbanAcikMi = true;
             timer1.Start();
-
         }
-
         #region Kontroller
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (acikMi)
@@ -65,10 +64,9 @@ namespace KanbanProje
                 }
 
             }
-            
+
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Start();
@@ -77,7 +75,6 @@ namespace KanbanProje
         {
             mouseDown = true;
         }
-
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
@@ -87,48 +84,39 @@ namespace KanbanProje
                 this.SetDesktopLocation(mouseX, mouseY);
             }
         }
-
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         #endregion
-
         private void btnAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show(" This program was designed by Cemalettin Yılmaz. BilgeAdamBoost is a project given in the software developer training program. ");
             timer1.Start();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-             new GirisForm();
+            new GirisForm();
             giris.Show();
         }
-
         private void AnaPencere_Load(object sender, EventArgs e)
-        {         
+        {
             lblProjeAdi.Text = $"Project : {proje.ProjeAdi} User : {proje.Kullanici}";
         }
         TakeABreakFormGame game;
-
         private void btnBreak_Click(object sender, EventArgs e)
         {
-            if(kanban!=null)
-                 kanban.Close();
-            game= new TakeABreakFormGame();
+            if (kanbanAcikMi)
+                kanban.Close();
+            game = new TakeABreakFormGame();
             game.MdiParent = this;
-            game.Location = new Point((this.Width-game.Width)/2, (this.Height - game.Height) / 2);
+            game.Location = new Point((this.Width - game.Width) / 2, (this.Height - game.Height) / 2);
             game.Show();
-            
-
         }
     }
 }
