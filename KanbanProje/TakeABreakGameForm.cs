@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class TakeABreakFormGame : Form
+    public partial class TakeABreakGameForm : Form
     {
-        public TakeABreakFormGame()
+        public TakeABreakGameForm()
         {
             InitializeComponent();
         }

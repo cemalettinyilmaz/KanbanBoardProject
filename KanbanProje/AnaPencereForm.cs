@@ -108,12 +108,12 @@ namespace KanbanProje
         {
             lblProjeAdi.Text = $"Project : {proje.ProjeAdi} User : {proje.Kullanici}";
         }
-        TakeABreakFormGame game;
+        TakeABreakGameForm game;
         private void btnBreak_Click(object sender, EventArgs e)
         {
             if (kanbanAcikMi)
                 kanban.Close();
-            game = new TakeABreakFormGame();
+            game = new TakeABreakGameForm();
             game.MdiParent = this;
             game.Location = new Point((this.Width - game.Width) / 2, (this.Height - game.Height) / 2);
             game.Show();
