@@ -212,7 +212,7 @@
             this.lbKategoriler.Font = new System.Drawing.Font("Txt_IV25", 8F, System.Drawing.FontStyle.Bold);
             this.lbKategoriler.FormattingEnabled = true;
             this.lbKategoriler.ItemHeight = 14;
-            this.lbKategoriler.Location = new System.Drawing.Point(24, 423);
+            this.lbKategoriler.Location = new System.Drawing.Point(20, 233);
             this.lbKategoriler.Name = "lbKategoriler";
             this.lbKategoriler.Size = new System.Drawing.Size(167, 102);
             this.lbKategoriler.TabIndex = 5;
@@ -230,7 +230,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Font = new System.Drawing.Font("Txt_IV25", 8F, System.Drawing.FontStyle.Bold);
-            this.panel1.Location = new System.Drawing.Point(24, 209);
+            this.panel1.Location = new System.Drawing.Point(20, 341);
             this.panel1.MaximumSize = new System.Drawing.Size(167, 192);
             this.panel1.MinimumSize = new System.Drawing.Size(167, 38);
             this.panel1.Name = "panel1";
@@ -251,13 +251,13 @@
             // rbYellow
             // 
             this.rbYellow.AutoSize = true;
-            this.rbYellow.ForeColor = System.Drawing.Color.Yellow;
+            this.rbYellow.ForeColor = System.Drawing.Color.Purple;
             this.rbYellow.Location = new System.Drawing.Point(9, 147);
             this.rbYellow.Name = "rbYellow";
-            this.rbYellow.Size = new System.Drawing.Size(71, 18);
+            this.rbYellow.Size = new System.Drawing.Size(75, 18);
             this.rbYellow.TabIndex = 7;
             this.rbYellow.TabStop = true;
-            this.rbYellow.Text = "Yellow";
+            this.rbYellow.Text = "Purple";
             this.rbYellow.UseVisualStyleBackColor = true;
             // 
             // rbBlue
@@ -276,7 +276,7 @@
             // 
             this.rbRed.AutoSize = true;
             this.rbRed.ForeColor = System.Drawing.Color.Red;
-            this.rbRed.Location = new System.Drawing.Point(9, 171);
+            this.rbRed.Location = new System.Drawing.Point(9, 166);
             this.rbRed.Name = "rbRed";
             this.rbRed.Size = new System.Drawing.Size(52, 18);
             this.rbRed.TabIndex = 7;
@@ -286,7 +286,7 @@
             // 
             // btnKategoriEkle
             // 
-            this.btnKategoriEkle.Location = new System.Drawing.Point(109, 169);
+            this.btnKategoriEkle.Location = new System.Drawing.Point(112, 161);
             this.btnKategoriEkle.Name = "btnKategoriEkle";
             this.btnKategoriEkle.Size = new System.Drawing.Size(55, 23);
             this.btnKategoriEkle.TabIndex = 10;
@@ -342,7 +342,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Txt_IV25", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(54, 404);
+            this.label4.Location = new System.Drawing.Point(50, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 17);
             this.label4.TabIndex = 7;
@@ -352,6 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1195, 571);
             this.Controls.Add(this.panel1);

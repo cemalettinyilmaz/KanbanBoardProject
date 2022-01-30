@@ -200,7 +200,7 @@ namespace KanbanProje
             else if (rbRed.Checked)
                 alinanRenk = Color.Red;
             else if (rbYellow.Checked)
-                alinanRenk = Color.Yellow;
+                alinanRenk = Color.Purple;
             if (proje.KategoriEkle(txtKategoriAdi.Text, alinanRenk))
                 MessageBox.Show("Category added.");
             Listele();
@@ -225,7 +225,7 @@ namespace KanbanProje
                     string selectedItem = lbTodo.Items[e.Index].ToString();
                     Font font = new Font("Txt_IV25", 14);
                     Color gelenRenk = Color.Black;
-
+                    Graphics g = e.Graphics;
                     foreach (var item1 in proje.todoList)
                     {
                         if (selectedItem == item1.NotAdi)
@@ -233,11 +233,13 @@ namespace KanbanProje
                             gelenRenk = item1.KategoriRengi;
                         }
                     }
-                    SolidBrush solidBrush = new SolidBrush(gelenRenk);
+                    SolidBrush solidBrush = new SolidBrush(Color.White);
                     int left = e.Bounds.Left;
                     int top = e.Bounds.Top;
                     e.DrawBackground();
+                    g.FillRectangle(new SolidBrush(gelenRenk), e.Bounds);
                     e.Graphics.DrawString(selectedItem, font, solidBrush, left, top);
+
                 }
             }
         }
@@ -250,6 +252,7 @@ namespace KanbanProje
                     string selectedItem = lbDoing.Items[e.Index].ToString();
                     Font font = new Font("Txt_IV25", 14);
                     Color gelenRenk = Color.Black;
+                    Graphics g = e.Graphics;
                     foreach (var item1 in proje.doingList)
                     {
                         if (selectedItem == item1.NotAdi)
@@ -257,10 +260,11 @@ namespace KanbanProje
                             gelenRenk = item1.KategoriRengi;
                         }
                     }
-                    SolidBrush solidBrush = new SolidBrush(gelenRenk);
+                    SolidBrush solidBrush = new SolidBrush(Color.White);
                     int left = e.Bounds.Left;
                     int top = e.Bounds.Top;
                     e.DrawBackground();
+                    g.FillRectangle(new SolidBrush(gelenRenk), e.Bounds);
                     e.Graphics.DrawString(selectedItem, font, solidBrush, left, top);
                 }
             }
@@ -274,6 +278,7 @@ namespace KanbanProje
                     string selectedItem = lbDone.Items[e.Index].ToString();
                     Font font = new Font("Txt_IV25", 14);
                     Color gelenRenk = Color.Black;
+                    Graphics g = e.Graphics;
                     foreach (var item1 in proje.doneList)
                     {
                         if (selectedItem == item1.NotAdi)
@@ -281,10 +286,11 @@ namespace KanbanProje
                             gelenRenk = item1.KategoriRengi;
                         }
                     }
-                    SolidBrush solidBrush = new SolidBrush(gelenRenk);
+                    SolidBrush solidBrush = new SolidBrush(Color.White);
                     int left = e.Bounds.Left;
                     int top = e.Bounds.Top;
                     e.DrawBackground();
+                    g.FillRectangle(new SolidBrush(gelenRenk), e.Bounds);
                     e.Graphics.DrawString(selectedItem, font, solidBrush, left, top);
                 }
             }
