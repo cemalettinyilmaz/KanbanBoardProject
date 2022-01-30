@@ -50,58 +50,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnaPencere.cs">
+    <Compile Include="AnaPencereForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnaPencere.Designer.cs">
-      <DependentUpon>AnaPencere.cs</DependentUpon>
+    <Compile Include="AnaPencereForm.Designer.cs">
+      <DependentUpon>AnaPencereForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giris.cs">
+    <Compile Include="GirisForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giris.Designer.cs">
-      <DependentUpon>Giris.cs</DependentUpon>
+    <Compile Include="GirisForm.Designer.cs">
+      <DependentUpon>GirisForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KanBanBoard.cs">
+    <Compile Include="KanBanBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KanBanBoard.Designer.cs">
-      <DependentUpon>KanBanBoard.cs</DependentUpon>
+    <Compile Include="KanBanBoardForm.Designer.cs">
+      <DependentUpon>KanBanBoardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotEkle.cs">
+    <Compile Include="NotEkleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NotEkle.Designer.cs">
-      <DependentUpon>NotEkle.cs</DependentUpon>
+    <Compile Include="NotEkleForm.Designer.cs">
+      <DependentUpon>NotEkleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotGoruntule.cs">
+    <Compile Include="NotGoruntuleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NotGoruntule.Designer.cs">
-      <DependentUpon>NotGoruntule.cs</DependentUpon>
+    <Compile Include="NotGoruntuleForm.Designer.cs">
+      <DependentUpon>NotGoruntuleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="YeniProje.cs">
+    <Compile Include="TakeABreakFormGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YeniProje.Designer.cs">
-      <DependentUpon>YeniProje.cs</DependentUpon>
+    <Compile Include="TakeABreakFormGame.Designer.cs">
+      <DependentUpon>TakeABreakFormGame.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AnaPencere.resx">
-      <DependentUpon>AnaPencere.cs</DependentUpon>
+    <Compile Include="YeniProjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YeniProjeForm.Designer.cs">
+      <DependentUpon>YeniProjeForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnaPencereForm.resx">
+      <DependentUpon>AnaPencereForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giris.resx">
-      <DependentUpon>Giris.cs</DependentUpon>
+    <EmbeddedResource Include="GirisForm.resx">
+      <DependentUpon>GirisForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KanBanBoard.resx">
-      <DependentUpon>KanBanBoard.cs</DependentUpon>
+    <EmbeddedResource Include="KanBanBoardForm.resx">
+      <DependentUpon>KanBanBoardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotEkle.resx">
-      <DependentUpon>NotEkle.cs</DependentUpon>
+    <EmbeddedResource Include="NotEkleForm.resx">
+      <DependentUpon>NotEkleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotGoruntule.resx">
-      <DependentUpon>NotGoruntule.cs</DependentUpon>
+    <EmbeddedResource Include="NotGoruntuleForm.resx">
+      <DependentUpon>NotGoruntuleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,8 +119,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="YeniProje.resx">
-      <DependentUpon>YeniProje.cs</DependentUpon>
+    <EmbeddedResource Include="TakeABreakFormGame.resx">
+      <DependentUpon>TakeABreakFormGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YeniProjeForm.resx">
+      <DependentUpon>YeniProjeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -141,6 +150,21 @@
       <Project>{b35f58a9-15c7-4daa-9154-d795565aa5ba}</Project>
       <Name>Kanboard.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart101458.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carred-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c-users-admin-documents-visual-studio-2010-projec.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

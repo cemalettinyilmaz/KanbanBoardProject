@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class YeniProje : Form
+    public partial class YeniProjeForm : Form
     {
         bool mouseDown;
         ProjeYoneticisi yonetici;
 
-        public YeniProje(ProjeYoneticisi gelenYonetici)
+        public YeniProjeForm(ProjeYoneticisi gelenYonetici)
         {
             InitializeComponent();
             yonetici = gelenYonetici;

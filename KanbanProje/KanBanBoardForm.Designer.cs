@@ -1,6 +1,6 @@
 ﻿namespace KanbanProje
 {
-    partial class KanBanBoard
+    partial class KanBanBoardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,13 +35,12 @@
             this.btnNotEkle = new System.Windows.Forms.Button();
             this.lbTodo = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbDoing = new System.Windows.Forms.ListBox();
             this.lbDone = new System.Windows.Forms.ListBox();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.lbKategoriler = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,9 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.showNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,13 +109,12 @@
             this.lbTodo.Name = "lbTodo";
             this.lbTodo.Size = new System.Drawing.Size(240, 424);
             this.lbTodo.TabIndex = 3;
-            this.lbTodo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KanBanBoard_MouseClick);
+            this.lbTodo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbTodo_MouseClick);
+            this.lbTodo.SelectedIndexChanged += new System.EventHandler(this.lbTodo_SelectedIndexChanged);
             this.lbTodo.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
             this.lbTodo.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_DragEnter);
             this.lbTodo.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
-            this.lbTodo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbTodo_MouseDoubleClick);
             this.lbTodo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
-            this.lbTodo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbTodo_MouseUp);
             // 
             // contextMenuStrip1
             // 
@@ -132,24 +128,31 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(156, 92);
             // 
+            // showNoteToolStripMenuItem
+            // 
+            this.showNoteToolStripMenuItem.Name = "showNoteToolStripMenuItem";
+            this.showNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showNoteToolStripMenuItem.Text = "Show Note";
+            this.showNoteToolStripMenuItem.Click += new System.EventHandler(this.showNoteToolStripMenuItem_Click);
+            // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -189,19 +192,6 @@
             this.lbDone.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
             this.lbDone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pasteToolStripMenuItem1});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(103, 26);
-            // 
-            // pasteToolStripMenuItem1
-            // 
-            this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
-            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(102, 22);
-            this.pasteToolStripMenuItem1.Text = "Paste";
-            // 
             // colorDialog1
             // 
             this.colorDialog1.SolidColorOnly = true;
@@ -216,7 +206,6 @@
             this.lbKategoriler.Name = "lbKategoriler";
             this.lbKategoriler.Size = new System.Drawing.Size(167, 158);
             this.lbKategoriler.TabIndex = 5;
-            this.lbKategoriler.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lbKategoriler_DrawItem);
             // 
             // panel1
             // 
@@ -227,7 +216,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lbKategoriler);
             this.panel1.Font = new System.Drawing.Font("Txt_IV25", 8F, System.Drawing.FontStyle.Bold);
-            this.panel1.Location = new System.Drawing.Point(27, 199);
+            this.panel1.Location = new System.Drawing.Point(27, 243);
             this.panel1.MaximumSize = new System.Drawing.Size(167, 295);
             this.panel1.MinimumSize = new System.Drawing.Size(167, 38);
             this.panel1.Name = "panel1";
@@ -287,19 +276,12 @@
             this.timer1.Interval = 15;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // showNoteToolStripMenuItem
-            // 
-            this.showNoteToolStripMenuItem.Name = "showNoteToolStripMenuItem";
-            this.showNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.showNoteToolStripMenuItem.Text = "Show Note";
-            this.showNoteToolStripMenuItem.Click += new System.EventHandler(this.showNoteToolStripMenuItem_Click);
-            // 
-            // KanBanBoard
+            // KanBanBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1195, 554);
+            this.ClientSize = new System.Drawing.Size(1195, 571);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbDone);
             this.Controls.Add(this.lbDoing);
@@ -309,12 +291,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "KanBanBoard";
+            this.Name = "KanBanBoardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KanBanBoard";
             this.Load += new System.EventHandler(this.KanBanBoard_Load);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.contextMenuStrip2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -333,8 +314,6 @@
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ListBox lbKategoriler;
         private System.Windows.Forms.Panel panel1;

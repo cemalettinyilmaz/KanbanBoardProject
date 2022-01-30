@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class NotGoruntule : Form
+    public partial class NotGoruntuleForm : Form
     {
         bool mouseDown;
         Notlar not;
-        public NotGoruntule(Notlar gelenNot)
+        public NotGoruntuleForm(Notlar gelenNot)
         {
             InitializeComponent();
             not = gelenNot;

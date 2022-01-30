@@ -18,19 +18,18 @@ namespace Kanboard.Data
         {
             return Projeler.Any(x => x.ProjeAdi == projeAdi);
         }
-
-        public bool yeniProjeOlustur(string projeAdi,string kullaniciAdi)
+        public bool yeniProjeOlustur(string projeAdi, string kullaniciAdi)
         {
-            if(ProjeAdiVarMi(projeAdi))
+            if (ProjeAdiVarMi(projeAdi))
             {
                 return false;
             }
-            else if(!ProjeAdiVarMi(projeAdi))
+            else if (!ProjeAdiVarMi(projeAdi))
             {
                 Projeler.Add(new Proje()
                 {
                     ProjeAdi = projeAdi,
-                    Kullanici=kullaniciAdi,
+                    Kullanici = kullaniciAdi,
 
                 });
                 return true;
@@ -41,8 +40,6 @@ namespace Kanboard.Data
         {
             return Projeler.FirstOrDefault(x => x.ProjeAdi == projeAdi);
         }
-
-
     }
-   
+
 }

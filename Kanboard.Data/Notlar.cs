@@ -14,17 +14,13 @@ namespace Kanboard.Data
         public string NotAdi { get; set; }
         public string BirakilanNot { get; set; }
         public string Kategori { get; set; }
-
         public Color KategoriRengi { get; set; }
-
-        
 
         public override string ToString()
         {
             return NotAdi;
         }
-
     }
-    
-    
+
+
 }

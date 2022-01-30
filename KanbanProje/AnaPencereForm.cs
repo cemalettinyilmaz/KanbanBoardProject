@@ -12,26 +12,30 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class AnaPencere : Form
+    public partial class AnaPencereForm : Form
     {
         private bool acikMi;
         private bool mouseDown;
-        Giris giris;
+        GirisForm giris;
         Proje proje;
-        public AnaPencere(Proje gelenProje, Giris gelenGiris)
+        public AnaPencereForm(Proje gelenProje, GirisForm gelenGiris)
         {
             InitializeComponent();
             
             proje=gelenProje;
             giris=gelenGiris;
         }
-        KanBanBoard kanban;
+        KanBanBoardForm kanban;
         private void btnKanBan_Click(object sender, EventArgs e)
         {
-            kanban =new KanBanBoard(proje,this);
+            if(game!=null)
+                game.Close();
+            kanban =new KanBanBoardForm(proje,this);
             kanban.MdiParent = this;
             kanban.Show();
+            kanban.Dock = DockStyle.Fill;
             timer1.Start();
+
         }
 
         #region Kontroller
@@ -105,14 +109,26 @@ namespace KanbanProje
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-             new Giris();
+             new GirisForm();
             giris.Show();
         }
 
         private void AnaPencere_Load(object sender, EventArgs e)
+        {         
+            lblProjeAdi.Text = $"Project : {proje.ProjeAdi} User : {proje.Kullanici}";
+        }
+        TakeABreakFormGame game;
+
+        private void btnBreak_Click(object sender, EventArgs e)
         {
-            lblKullanici.Text = proje.Kullanici;
-            lblProjeAdi.Text = proje.ProjeAdi;
+            if(kanban!=null)
+                 kanban.Close();
+            game= new TakeABreakFormGame();
+            game.MdiParent = this;
+            game.Location = new Point((this.Width-game.Width)/2, (this.Height - game.Height) / 2);
+            game.Show();
+            
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace KanbanProje
 {
-    partial class NotEkle
+    partial class NotEkleForm
     {
         /// <summary>
         /// Required designer variable.

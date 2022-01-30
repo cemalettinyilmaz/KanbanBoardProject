@@ -1,6 +1,6 @@
 ﻿namespace KanbanProje
 {
-    partial class AnaPencere
+    partial class AnaPencereForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaPencere));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaPencereForm));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblProjeAdi = new System.Windows.Forms.Label();
             this.lblKullanici = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlDropDown = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnKanBan = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnBreak = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlDropDown.SuspendLayout();
             this.SuspendLayout();
@@ -63,8 +62,6 @@
             this.panel1.BackColor = System.Drawing.Color.ForestGreen;
             this.panel1.Controls.Add(this.lblProjeAdi);
             this.panel1.Controls.Add(this.lblKullanici);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Txt_IV25", 8.25F);
@@ -79,10 +76,10 @@
             // 
             // lblProjeAdi
             // 
-            this.lblProjeAdi.Font = new System.Drawing.Font("Txt_IV25", 14F);
-            this.lblProjeAdi.Location = new System.Drawing.Point(121, 0);
+            this.lblProjeAdi.Font = new System.Drawing.Font("Txt_IV25", 12F);
+            this.lblProjeAdi.Location = new System.Drawing.Point(8, 9);
             this.lblProjeAdi.Name = "lblProjeAdi";
-            this.lblProjeAdi.Size = new System.Drawing.Size(164, 20);
+            this.lblProjeAdi.Size = new System.Drawing.Size(402, 20);
             this.lblProjeAdi.TabIndex = 2;
             // 
             // lblKullanici
@@ -93,24 +90,6 @@
             this.lblKullanici.Size = new System.Drawing.Size(412, 35);
             this.lblKullanici.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Txt_IV25", 12F);
-            this.label2.Location = new System.Drawing.Point(47, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 35);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "User =";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Txt_IV25", 12F);
-            this.label3.Location = new System.Drawing.Point(12, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Project =";
-            // 
             // timer1
             // 
             this.timer1.Interval = 15;
@@ -118,26 +97,26 @@
             // 
             // pnlDropDown
             // 
+            this.pnlDropDown.Controls.Add(this.btnBreak);
             this.pnlDropDown.Controls.Add(this.btnClose);
             this.pnlDropDown.Controls.Add(this.btnAbout);
             this.pnlDropDown.Controls.Add(this.btnKanBan);
             this.pnlDropDown.Controls.Add(this.button1);
             this.pnlDropDown.Location = new System.Drawing.Point(12, 49);
-            this.pnlDropDown.MaximumSize = new System.Drawing.Size(193, 169);
+            this.pnlDropDown.MaximumSize = new System.Drawing.Size(193, 209);
             this.pnlDropDown.MinimumSize = new System.Drawing.Size(193, 43);
             this.pnlDropDown.Name = "pnlDropDown";
-            this.pnlDropDown.Size = new System.Drawing.Size(193, 44);
+            this.pnlDropDown.Size = new System.Drawing.Size(193, 43);
             this.pnlDropDown.TabIndex = 4;
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(0, 128);
+            this.btnClose.Location = new System.Drawing.Point(0, 169);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(193, 41);
-            this.btnClose.TabIndex = 7;
+            this.btnClose.Size = new System.Drawing.Size(193, 40);
+            this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Exit Project";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -186,7 +165,20 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // AnaPencere
+            // btnBreak
+            // 
+            this.btnBreak.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnBreak.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBreak.Location = new System.Drawing.Point(0, 128);
+            this.btnBreak.Name = "btnBreak";
+            this.btnBreak.Size = new System.Drawing.Size(193, 43);
+            this.btnBreak.TabIndex = 7;
+            this.btnBreak.Text = "Take a Break";
+            this.btnBreak.UseVisualStyleBackColor = false;
+            this.btnBreak.Click += new System.EventHandler(this.btnBreak_Click);
+            // 
+            // AnaPencereForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -198,7 +190,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "AnaPencere";
+            this.Name = "AnaPencereForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnaPencere";
             this.Load += new System.EventHandler(this.AnaPencere_Load);
@@ -220,7 +212,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblProjeAdi;
         private System.Windows.Forms.Label lblKullanici;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBreak;
     }
 }

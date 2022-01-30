@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class Giris : Form
+    public partial class GirisForm : Form
     {
         bool mouseDown;
         ProjeYoneticisi projeYonetici;
-        public Giris()
+        public GirisForm()
         {
             InitializeComponent();
             try
@@ -68,7 +68,7 @@ namespace KanbanProje
 
         private void btnYeniProje_Click(object sender, EventArgs e)
         {
-            YeniProje yeniProje = new YeniProje(projeYonetici);
+            YeniProjeForm yeniProje = new YeniProjeForm(projeYonetici);
             yeniProje.ShowDialog();
             comboboxDuzenle();
         }
@@ -80,7 +80,7 @@ namespace KanbanProje
             else
             {
                 proje = projeYonetici.projeAc(cmbProjeler.Text);
-                AnaPencere anaPencere = new AnaPencere(proje,this);
+                AnaPencereForm anaPencere = new AnaPencereForm(proje,this);
                 anaPencere.Show();
                 this.Hide();
             }

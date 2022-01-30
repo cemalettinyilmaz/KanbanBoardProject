@@ -1,6 +1,6 @@
 ﻿namespace KanbanProje
 {
-    partial class Giris
+    partial class GirisForm
     {
         /// <summary>
         /// Required designer variable.

@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace KanbanProje
 {
-    public partial class NotEkle : Form
+    public partial class NotEkleForm : Form
     {
         bool mouseDown;
         Proje proje;
-        public NotEkle(Proje gelenProje)
+        public NotEkleForm(Proje gelenProje)
         {
             InitializeComponent();
             proje = gelenProje;
